@@ -2,6 +2,7 @@
 
 This library contains python 3.5(.2) implementations of algorithms described in
 Algorithms: Fourth Edition by Robert Sedgewick and Kevin Wayne.
+
 [comment]: <> (
 ## Getting Started
 
