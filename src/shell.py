@@ -12,7 +12,7 @@ class Shell(Sorter):
         while h >= 1:
             for i in range(h, N):
                 j = i
-                while j >= h and a[j] < a[j - h]:
+                while j >= h and values[j] < values[j - h]:
                     self.exchange(values, j, j - h)
                     j -= h
-            h = h / 3
+            h = h // 3
