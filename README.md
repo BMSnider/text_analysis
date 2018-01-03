@@ -86,6 +86,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 * Thanks to **Billie Thompson** - [PurpleBooth(github link)](https://github.com/PurpleBooth) for the README Template
-* Inspiration
-* etc
 
