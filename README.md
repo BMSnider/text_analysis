@@ -85,6 +85,4 @@ This project is licensed under the GNU General Public License v3.0 License - see
 ## Acknowledgments
 
 * Thanks to **Billie Thompson** - [PurpleBooth(github link)](https://github.com/PurpleBooth) for the README Template
-* Inspiration
-* etc
 
