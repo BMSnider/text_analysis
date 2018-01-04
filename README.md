@@ -64,10 +64,13 @@ Add additional notes about how to deploy this on a live system
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
+-->
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+I welcome any and all contributions to this repository as long as your behavior conforms to the [code of conduct](https://github.com/selkind/sorting/blob/master/CODE_OF_CONDUCT.md).
 
+Feel free to add an issue ([how to add an issue](https://help.github.com/articles/creating-an-issue/)) or submit a pull request! ([how to submit a pull request](https://help.github.com/articles/creating-a-pull-request/))
+<!--
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
