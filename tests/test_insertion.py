@@ -1,6 +1,6 @@
 import unittest
 from sorting.src.input_generator import InputGenerator
-from sorting.src.selection import Selection
+from sorting.src.insertion import Insertion
 
 
 class TestSelection(unittest.TestCase):
@@ -9,10 +9,10 @@ class TestSelection(unittest.TestCase):
         test_input = InputGenerator()
         self.int_data = test_input.make_random_number(100)
         self.str_data = test_input.make_random_string(1000)
-        self.test = Selection()
+        self.test = Insertion()
 
     def test_selection_creation(self):
-        self.assertIsInstance(self.test, Selection)
+        self.assertIsInstance(self.test, Insertion)
 
     def test_int_sort(self):
         int_test = []
