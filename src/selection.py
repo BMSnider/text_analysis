@@ -1,4 +1,4 @@
-from sorting.src.sorter import Sorter
+from src.sorter import Sorter
 
 
 class Selection(Sorter):

@@ -11,19 +11,24 @@ class Sorter:
         # copy list to another list
         aux = []
         for k in range(low, hi + 1):
-            aux[k] = values[k]
+            aux.append(values[k])
         for L in range(low, hi + 1):
+            #iaux and jaux are shifted by low because python lists can only
+            #start at index 0. Therefore, when L = low this makes the value
+            #of aux[iaux] == values[low] and aux[jaux] == values[mid + 1]
+            iaux = i - low
+            jaux = j - low
             if i > mid:
-                values[L] = aux[j]
+                values[L] = aux[jaux]
                 j += 1
             elif j > hi:
-                values[L] = aux[i]
+                values[L] = aux[iaux]
                 i += 1
-            elif aux[j] < aux[i]:
-                values[L] = aux[j]
+            elif aux[jaux] < aux[iaux]:
+                values[L] = aux[jaux]
                 j += 1
             else:
-                values[L] = aux[i]
+                values[L] = aux[iaux]
                 i += 1
 
     def show(self, values):

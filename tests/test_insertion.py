@@ -1,9 +1,9 @@
 import unittest
-from sorting.src.input_generator import InputGenerator
-from sorting.src.insertion import Insertion
+from src.input_generator import InputGenerator
+from src.insertion import Insertion
 
 
-class TestSelection(unittest.TestCase):
+class TestInsertion(unittest.TestCase):
 
     def setUp(self):
         test_input = InputGenerator()
