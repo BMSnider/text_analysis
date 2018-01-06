@@ -69,7 +69,10 @@ Add additional notes about how to deploy this on a live system
 
 I welcome any and all contributions to this repository as long as your behavior conforms to the [code of conduct](https://github.com/selkind/sorting/blob/master/CODE_OF_CONDUCT.md).
 
-Feel free to add an issue ([how to add an issue](https://help.github.com/articles/creating-an-issue/)) or submit a pull request! ([how to submit a pull request](https://help.github.com/articles/creating-a-pull-request/))
+Feel free to add an issue or submit a pull request!
+If you're new to open source on Github (like I am) here's how:
+* [to add an issue](https://help.github.com/articles/creating-an-issue/)
+* [to submit a pull request](https://help.github.com/articles/creating-a-pull-request/)
 <!--
 ## Versioning
 
