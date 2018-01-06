@@ -1,9 +1,9 @@
 import unittest
-from sorting.src.input_generator import InputGenerator
-from sorting.src.shell import Shell
+from src.input_generator import InputGenerator
+from src.shell import Shell
 
 
-class TestSelection(unittest.TestCase):
+class TestShell(unittest.TestCase):
 
     def setUp(self):
         test_input = InputGenerator()

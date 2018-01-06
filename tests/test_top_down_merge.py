@@ -1,18 +1,18 @@
 import unittest
 from src.input_generator import InputGenerator
-from src.selection import Selection
+from src.top_down_merge import TopDownMerge
 
 
-class TestSelection(unittest.TestCase):
+class TestTopDownMerge(unittest.TestCase):
 
     def setUp(self):
         test_input = InputGenerator()
         self.int_data = test_input.make_random_number(100)
         self.str_data = test_input.make_random_string(1000)
-        self.test = Selection()
+        self.test = TopDownMerge()
 
     def test_selection_creation(self):
-        self.assertIsInstance(self.test, Selection)
+        self.assertIsInstance(self.test, TopDownMerge)
 
     def test_int_sort(self):
         int_test = []
