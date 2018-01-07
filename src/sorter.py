@@ -35,13 +35,15 @@ class Sorter:
         i = low
         j = hi + 1
         partition_item = values[low]
-        while(True):
+        while True:
             i += 1
             while values[i] < partition_item:
+                i += 1
                 if i == hi:
                     break
             j -= 1
             while partition_item < values[j]:
+                j -= 1
                 if j == low:
                     break
             if i >= j:
