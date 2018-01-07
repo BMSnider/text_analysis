@@ -31,6 +31,27 @@ class Sorter:
                 values[L] = aux[iaux]
                 i += 1
 
+    def partition(self, values: list, low, hi):
+        i = low
+        j = hi + 1
+        partition_item = values[low]
+        while True:
+            i += 1
+            while values[i] < partition_item:
+                i += 1
+                if i == hi:
+                    break
+            j -= 1
+            while partition_item < values[j]:
+                j -= 1
+                if j == low:
+                    break
+            if i >= j:
+                break
+            self.exchange(values, i, j)
+        self.exchange(values, low, j)
+        return j
+
     def show(self, values):
         for val in values:
             print(val, end=" ")
