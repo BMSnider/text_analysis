@@ -1,6 +1,6 @@
 import unittest
-from src.input_generator import InputGenerator
-from src.shell import Shell
+from text_analysis.sorting.src.input_generator import InputGenerator
+from text_analysis.sorting.src.shell import Shell
 
 
 class TestShell(unittest.TestCase):

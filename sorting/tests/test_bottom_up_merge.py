@@ -1,9 +1,9 @@
 import unittest
-from src.input_generator import InputGenerator
-from src.bottom_up_merge import BottomUpMerge
+from text_analysis.sorting.src.input_generator import InputGenerator
+from text_analysis.sorting.src.bottom_up_merge import BottomUpMerge
 
 
-class TestTopDownMerge(unittest.TestCase):
+class TestBottomUpMerge(unittest.TestCase):
 
     def setUp(self):
         test_input = InputGenerator()

@@ -1,6 +1,6 @@
 import unittest
-from src.input_generator import InputGenerator
-from src.selection import Selection
+from text_analysis.sorting.src.input_generator import InputGenerator
+from text_analysis.sorting.src.selection import Selection
 
 
 class TestSelection(unittest.TestCase):

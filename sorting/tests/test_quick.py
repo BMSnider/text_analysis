@@ -1,9 +1,9 @@
 import unittest
-from src.input_generator import InputGenerator
-from src.quick import Quick
+from text_analysis.sorting.src.input_generator import InputGenerator
+from text_analysis.sorting.src.quick import Quick
 
 
-class TestShell(unittest.TestCase):
+class TestQuick(unittest.TestCase):
 
     def setUp(self):
         test_input = InputGenerator()

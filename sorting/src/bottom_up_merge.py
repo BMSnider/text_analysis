@@ -1,4 +1,4 @@
-from src.sorter import Sorter
+from text_analysis.sorting.src.sorter import Sorter
 
 
 class BottomUpMerge(Sorter):

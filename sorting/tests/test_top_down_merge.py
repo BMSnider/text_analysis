@@ -1,6 +1,7 @@
 import unittest
-from src.input_generator import InputGenerator
-from src.top_down_merge import TopDownMerge
+
+from text_analysis.sorting.src.input_generator import InputGenerator
+from text_analysis.sorting.src.top_down_merge import TopDownMerge
 
 
 class TestTopDownMerge(unittest.TestCase):

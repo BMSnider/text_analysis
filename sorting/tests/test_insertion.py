@@ -1,6 +1,6 @@
 import unittest
-from src.input_generator import InputGenerator
-from src.insertion import Insertion
+from text_analysis.sorting.src.input_generator import InputGenerator
+from text_analysis.sorting.src.insertion import Insertion
 
 
 class TestInsertion(unittest.TestCase):
