@@ -9,5 +9,13 @@ class TestDistributionBuilder(unittest.TestCase):
 
     def setUp(self):
         input_gen = InputGenerator()
-        self.test_data = input_gen.make_random_string(1000)
-        self.test =
+        self.test_data = input_gen.make_random_string(100000)
+        self.test = DistributionBuilder()
+
+    def test_has_property_errors(self):
+        self.assertEqual(self.test.errors, {})
+
+    def test_get_value_counts(self):
+        value_counts = self.test.get_value_counts(self.test_data)
+        self.assertIsInstance(value_counts, dict)
+        print(value_counts)
