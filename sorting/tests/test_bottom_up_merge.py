@@ -1,5 +1,5 @@
 import unittest
-from text_analysis.sorting.src.input_generator import InputGenerator
+from text_analysis.tools.input_generator import InputGenerator
 from text_analysis.sorting.src.bottom_up_merge import BottomUpMerge
 
 
