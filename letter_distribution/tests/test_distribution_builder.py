@@ -1,20 +1,61 @@
 import unittest
 from text_analysis.letter_distribution.src.distribution_builder import DistributionBuilder
 from text_analysis.tools.src.input_generator import InputGenerator
-
+from text_analysis.tools.src.timer import Timer
 
 
 class TestDistributionBuilder(unittest.TestCase):
 
     def setUp(self):
         input_gen = InputGenerator()
-        self.test_data = input_gen.make_random_string(100000)
+        self.big_test_data = input_gen.make_random_string(1000000)
+        self.small_test_data = input_gen.make_random_string(10)
         self.test = DistributionBuilder()
 
     def test_has_property_errors(self):
         self.assertEqual(self.test.errors, {})
 
     def test_get_value_counts(self):
-        value_counts = self.test.get_value_counts(self.test_data)
+        value_counts = self.test.get_value_counts(self.small_test_data)
         self.assertIsInstance(value_counts, dict)
         print(value_counts)
+
+    def test_total_method_small_input(self):
+        small_timer_len = Timer("small_data_len")
+        small_timer_loop = Timer("small_data_loop")
+        big_timer_len = Timer("big_data_len")
+        big_timer_loop = Timer("big_data_loop")
+
+        small_timer_len.start()
+        small_total_len = self.test.get_total_count(self.small_test_data)
+        small_timer_len.stop()
+
+        small_loop_value_counts = self.test.get_value_counts(self.small_test_data)
+        small_timer_loop.start()
+        small_total_loop = self.test.get_value_counts_total(small_loop_value_counts)
+        small_timer_loop.stop()
+
+        big_timer_len.start()
+        big_total_len = self.test.get_total_count(self.big_test_data)
+        big_timer_len.stop()
+
+        big_loop_value_counts = self.test.get_value_counts(self.big_test_data)
+        big_timer_loop.start()
+        big_total_loop = self.test.get_value_counts_total(big_loop_value_counts)
+        big_timer_loop.stop()
+
+        self.assertEqual(len(self.small_test_data), small_total_len)
+        self.assertEqual(len(self.small_test_data), small_total_loop)
+        self.assertEqual(len(self.big_test_data), big_total_len)
+        self.assertEqual(len(self.big_test_data), big_total_loop)
+
+        print(small_timer_len.formatted_time())
+        print(small_timer_loop.formatted_time())
+        print(big_timer_len.formatted_time())
+        print(big_timer_loop.formatted_time())
+
+        small_len_faster = small_timer_len.duration() < small_timer_loop.duration()
+        self.assertTrue(small_len_faster)
+
+        big_len_faster = big_timer_len.duration() < big_timer_loop.duration()
+        self.assertTrue(big_len_faster)

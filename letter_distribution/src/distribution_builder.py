@@ -18,3 +18,15 @@ class DistributionBuilder:
             else:
                 value_counts[element] = 1
         return value_counts
+
+    def get_total_count(self, input_data):
+        return len(input_data)
+
+    def get_value_counts_total(self, value_counts):
+        if type(value_counts) != dict:
+            self.errors["totals"] = "input data for get_total_value_counts type != dict"
+            return 0
+        total = 0
+        for i in value_counts:
+            total += value_counts[i]
+        return total
