@@ -1,6 +1,6 @@
 import unittest
 from text_analysis.letter_distribution.src.distribution import Distribution
-from text_analysis.tools.input_generator import InputGenerator
+from text_analysis.tools.src.input_generator import InputGenerator
 
 
 class TestDistribution(unittest.TestCase):

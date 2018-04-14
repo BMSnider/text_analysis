@@ -1,7 +1,6 @@
-# Sorting Algorithms
+# Text Analysis
 
-This library contains python 3.5(.2) implementations of algorithms described in
-Algorithms: Fourth Edition by Robert Sedgewick and Kevin Wayne.
+This repository contains tools to be used in quantitative analysis of text. In addition there are python 3.5(.2) implementations of algorithms as described in Algorithms: Fourth Edition by Robert Sedgewick and Kevin Wayne which I think I may find uses for in this project.
 
 <!--
 ## Getting Started
