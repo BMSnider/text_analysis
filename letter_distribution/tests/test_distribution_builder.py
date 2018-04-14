@@ -9,7 +9,7 @@ class TestDistributionBuilder(unittest.TestCase):
     def setUp(self):
         input_gen = InputGenerator()
         self.big_test_data = input_gen.make_random_string(1000000)
-        self.small_test_data = input_gen.make_random_string(10)
+        self.small_test_data = input_gen.make_random_string(100)
         self.test = DistributionBuilder()
 
     def test_has_property_errors(self):
@@ -17,10 +17,10 @@ class TestDistributionBuilder(unittest.TestCase):
 
     def test_get_value_counts(self):
         value_counts = self.test.get_value_counts(self.small_test_data)
-        self.assertIsInstance(value_counts, dict)
+        self.assertIsInstance(value_counts, list)
         print(value_counts)
 
-    def test_total_method_small_input(self):
+    def test_total_method(self):
         small_timer_len = Timer("small_data_len")
         small_timer_loop = Timer("small_data_loop")
         big_timer_len = Timer("big_data_len")
