@@ -63,7 +63,7 @@ class TestDistributionBuilder(unittest.TestCase):
         value_counts = self.test.get_value_counts(self.small_test_data)
         mode_elements = self.test.get_mode_elements(value_counts)
 
-        self.assertIsInstance(mode_elements, list)
+        self.assertIsInstance(mode_elements, tuple)
         print("value_counts")
         print(value_counts)
         print("mode_elements")

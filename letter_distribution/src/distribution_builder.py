@@ -49,4 +49,4 @@ class DistributionBuilder:
                 break
             else:
                 elements.append(test_element[0])
-        return elements
+        return elements, value
