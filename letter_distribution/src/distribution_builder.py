@@ -30,13 +30,23 @@ class DistributionBuilder:
 
     def get_value_counts_total(self, value_counts):
         if type(value_counts) != list:
-            self.errors["totals"] = "input data for get_total_value_counts type != dict"
+            self.errors["totals"] = "input data for get_total_value_counts type != list"
             return False
         return sum(element[1] for element in value_counts)
 
     def get_mode_elements(self, value_counts):
-        if type(value_counts) != dict:
-            self.errors["mode"] = "input data for get_mode_elements type != dict"
+        if type(value_counts) != list:
+            self.errors["mode"] = "input data for get_mode_elements type != list"
             return False
 
-        return False
+        largest_index = len(value_counts) - 1
+        elements = [value_counts[largest_index][0]]
+        value = value_counts[largest_index][1]
+
+        for i in range(largest_index - 1, -1, -1):
+            test_element = value_counts[i]
+            if test_element[1] != value:
+                break
+            else:
+                elements.append(test_element[0])
+        return elements

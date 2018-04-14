@@ -9,7 +9,7 @@ class TestDistributionBuilder(unittest.TestCase):
     def setUp(self):
         input_gen = InputGenerator()
         self.big_test_data = input_gen.make_random_string(1000000)
-        self.small_test_data = input_gen.make_random_string(100)
+        self.small_test_data = input_gen.make_random_string(27)
         self.test = DistributionBuilder()
 
     def test_has_property_errors(self):
@@ -18,7 +18,6 @@ class TestDistributionBuilder(unittest.TestCase):
     def test_get_value_counts(self):
         value_counts = self.test.get_value_counts(self.small_test_data)
         self.assertIsInstance(value_counts, list)
-        print(value_counts)
 
     def test_total_method(self):
         small_timer_len = Timer("small_data_len")
@@ -59,3 +58,13 @@ class TestDistributionBuilder(unittest.TestCase):
 
         big_len_faster = big_timer_len.duration() < big_timer_loop.duration()
         self.assertTrue(big_len_faster)
+
+    def test_get_mode_elements(self):
+        value_counts = self.test.get_value_counts(self.small_test_data)
+        mode_elements = self.test.get_mode_elements(value_counts)
+
+        self.assertIsInstance(mode_elements, list)
+        print("value_counts")
+        print(value_counts)
+        print("mode_elements")
+        print(mode_elements)
