@@ -1,5 +1,6 @@
 import unittest
 from text_analysis.letter_distribution.src.distribution_builder import DistributionBuilder
+from text_analysis.letter_distribution.src.distribution import Distribution
 from text_analysis.tools.src.input_generator import InputGenerator
 from text_analysis.tools.src.timer import Timer
 
@@ -16,7 +17,7 @@ class TestDistributionBuilder(unittest.TestCase):
         self.assertEqual(self.test.errors, {})
 
     def test_get_value_counts(self):
-        value_counts = self.test.get_value_counts(self.small_test_data)
+        value_counts = self.test.get_element_frequency(self.small_test_data)
         self.assertIsInstance(value_counts, list)
 
     def test_total_method(self):
@@ -29,18 +30,18 @@ class TestDistributionBuilder(unittest.TestCase):
         small_total_len = self.test.get_total_count(self.small_test_data)
         small_timer_len.stop()
 
-        small_loop_value_counts = self.test.get_value_counts(self.small_test_data)
+        small_loop_value_counts = self.test.get_element_frequency(self.small_test_data)
         small_timer_loop.start()
-        small_total_loop = self.test.get_value_counts_total(small_loop_value_counts)
+        small_total_loop = self.test.get_element_frequency_total(small_loop_value_counts)
         small_timer_loop.stop()
 
         big_timer_len.start()
         big_total_len = self.test.get_total_count(self.big_test_data)
         big_timer_len.stop()
 
-        big_loop_value_counts = self.test.get_value_counts(self.big_test_data)
+        big_loop_value_counts = self.test.get_element_frequency(self.big_test_data)
         big_timer_loop.start()
-        big_total_loop = self.test.get_value_counts_total(big_loop_value_counts)
+        big_total_loop = self.test.get_element_frequency_total(big_loop_value_counts)
         big_timer_loop.stop()
 
         self.assertEqual(len(self.small_test_data), small_total_len)
@@ -60,7 +61,7 @@ class TestDistributionBuilder(unittest.TestCase):
         self.assertTrue(big_len_faster)
 
     def test_get_mode_elements(self):
-        value_counts = self.test.get_value_counts(self.small_test_data)
+        value_counts = self.test.get_element_frequency(self.big_test_data)
         mode_elements = self.test.get_mode_elements(value_counts)
 
         self.assertIsInstance(mode_elements, tuple)
@@ -68,3 +69,24 @@ class TestDistributionBuilder(unittest.TestCase):
         print(value_counts)
         print("mode_elements")
         print(mode_elements)
+
+    def test_get_least_common_elements(self):
+        value_counts = self.test.get_element_frequency(self.big_test_data)
+        mode_elements = self.test.get_least_common_elements(value_counts)
+
+        self.assertIsInstance(mode_elements, tuple)
+        print("value_counts")
+        print(value_counts)
+        print("least_common_elements")
+        print(mode_elements)
+
+    def test_make_distribution(self):
+        element_type = "letter"
+        dist = self.test.make_distribution(element_type, self.small_test_data)
+        self.assertIsInstance(dist, Distribution)
+
+        timer = Timer("big data distribution creation")
+        timer.start()
+        big_dist = self.test.make_distribution(element_type, self.big_test_data)
+        timer.stop()
+        print(timer.formatted_time())
