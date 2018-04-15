@@ -8,8 +8,8 @@ class TestTopDownMerge(unittest.TestCase):
 
     def setUp(self):
         test_input = InputGenerator()
-        self.int_data = test_input.make_random_number(100)
-        self.str_data = test_input.make_random_string(1000)
+        self.int_data = test_input.make_random_number_list(100)
+        self.str_data = test_input.make_random_string_list(1000)
         self.test = TopDownMerge()
 
     def test_selection_creation(self):

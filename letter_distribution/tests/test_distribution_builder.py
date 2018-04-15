@@ -9,8 +9,8 @@ class TestDistributionBuilder(unittest.TestCase):
 
     def setUp(self):
         input_gen = InputGenerator()
-        self.big_test_data = input_gen.make_random_string(1000000)
-        self.small_test_data = input_gen.make_random_string(27)
+        self.big_test_data = input_gen.make_random_string_list(1000000)
+        self.small_test_data = input_gen.make_random_string_list(27)
         self.test = DistributionBuilder()
 
     def test_has_property_errors(self):
