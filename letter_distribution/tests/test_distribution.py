@@ -8,7 +8,7 @@ class TestDistribution(unittest.TestCase):
     def setUp(self):
         test_input = InputGenerator()
         alphabet = "abcdefghijklmnopqrstuvwxyz"
-        number = test_input.make_random_number(26)
+        number = test_input.make_random_number_list(26)
         self.test_data = {}
 
         self.sum = 0
