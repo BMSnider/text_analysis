@@ -6,9 +6,9 @@ from text_analysis.tools.src.timer import Timer
 
 class TestInputFilter(unittest.TestCase):
     def setUp(self):
-        input = InputGenerator()
-        self.small_data = input.make_random_string(1000, "all", False)
-        self.big_data = input.make_random_string(100000, "all", False)
+        input_data = InputGenerator()
+        self.small_data = input_data.make_random_string(1000, "all", False)
+        self.big_data = input_data.make_random_string(100000, "all", False)
 
     def test_get_characters(self):
         test = InputFilter(self.small_data)
