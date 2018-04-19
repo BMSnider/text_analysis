@@ -16,6 +16,21 @@ class PathManager:
         self.path = path
         self.output = []
 
+    def convert_path(self):
+        """Converts path to list of files"""
+        files = []
+        if os.path.isdir(self.path):
+            for i in os.listdir(self.path):
+                # ignores subdirectories from list of files
+                file_path = self.path + "/{}".format(i)
+                if os.path.isfile(file_path):
+                    files.append(file_path)
+        elif os.path.isfile(self.path):
+            files.append(self.path)
+        else:
+            print("{} is not recognized as a valid path".format(self.path))
+        return files
+
     def get_file_converter(self, file_path):
 
         file_converters = {".txt": TextToString
