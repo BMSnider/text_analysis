@@ -17,6 +17,16 @@ class PathManager:
         self.output = []
 
     def convert_path(self):
+        files = self.get_files()
+        converted_files = []
+        for file in files:
+            converter = self.get_file_converter(file)
+            data = converter.convert_txt()
+            output = self.format_output(file, data)
+            converted_files.append(output)
+        return converted_files
+
+    def get_files(self):
         """Converts path to list of files"""
         files = []
         if os.path.isdir(self.path):
@@ -45,3 +55,10 @@ class PathManager:
             return None
             # This should probably eventually be refactored to
             # return an exception or a dummy converter
+
+    def format_output(self, file_path, data):
+        """Creates named tuple with format of (path, file name, string)"""
+        file_name = os.path.basename(file_path)
+        raw_string = data.encode("unicode-escape")
+        converted_string = collections.namedtuple('converted_string', 'path file raw_string')
+        return converted_string(path=self.path, file=file_name, raw_string=raw_string)
