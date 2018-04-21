@@ -16,6 +16,12 @@ class TestTextToString(unittest.TestCase):
     def test_return_type(self):
         result = self.test_obj.convert_txt()
         self.assertIsInstance(result, str)
+
+    def test_bad_path_name(self):
+        bad_path = "fish"
+        test_obj = TextToString(bad_path)
+        result = test_obj.convert_txt()
+        self.assertEqual(result, "")
         
     def test_convert_txt(self):
 
