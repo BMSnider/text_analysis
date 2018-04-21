@@ -14,7 +14,6 @@ class PathManager:
 
     def __init__(self, path):  # directory or file
         self.path = path
-        self.output = []
         self.file_converters = {".txt": TextToString}
 
     def convert_path(self):

@@ -22,7 +22,7 @@ class TestTextToString(unittest.TestCase):
         test_obj = TextToString(bad_path)
         result = test_obj.convert_txt()
         self.assertEqual(result, "")
-        
+
     def test_convert_txt(self):
 
         result = self.test_obj.convert_txt()
@@ -31,4 +31,5 @@ asdfghjkl;'zxcvbnm,./~!@#$%
 
 ^&*()_+QWERTYUIOP{}|ASDFGHJK
     L:"ZXCVBNM<>?"""
+
         self.assertEqual(result, data_copied_from_txt)
