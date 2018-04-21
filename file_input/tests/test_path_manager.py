@@ -1,6 +1,7 @@
 import unittest
 import os
 from text_analysis.file_input.src.path_manager import PathManager
+from text_analysis.file_input.src.text_to_string import TextToString
 
 
 class TestPathManager(unittest.TestCase):
@@ -25,3 +26,13 @@ class TestPathManager(unittest.TestCase):
         test = PathManager(self.test_file_path)
         result = test.get_files()
         self.assertEqual([self.test_file_path], result)
+
+    def test_get_file_converter(self):
+        test = PathManager(self.test_file_path)
+        converter = test.get_file_converter(self.test_file_path)
+        self.assertIsInstance(converter, TextToString)
+
+    def test_get_file_converter_failure(self):
+        test = PathManager(self.test_file_path)
+        converter = test.get_file_converter("fish.fsx")
+        self.assertIsNone(converter)
