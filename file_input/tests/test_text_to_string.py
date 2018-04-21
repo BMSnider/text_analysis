@@ -8,15 +8,18 @@ class TestTextToString(unittest.TestCase):
     def setUp(self):
         current_working_directory = os.getcwd()
         self.every_char_path_name = current_working_directory + "/text_to_string_test_data.txt"
+        self.test_obj = TextToString(self.every_char_path_name)
 
     def test_object_type(self):
-        test_obj = TextToString(self.every_char_path_name)
-        self.assertIsInstance(test_obj, TextToString)
+        self.assertIsInstance(self.test_obj, TextToString)
 
+    def test_return_type(self):
+        result = self.test_obj.convert_txt()
+        self.assertIsInstance(result, str)
+        
     def test_convert_txt(self):
 
-        test_obj = TextToString(self.every_char_path_name)
-        result = test_obj.convert_txt()
+        result = self.test_obj.convert_txt()
         data_copied_from_txt = """`1234567890 -=qwertyuiop[]\\
 asdfghjkl;'zxcvbnm,./~!@#$%
 
