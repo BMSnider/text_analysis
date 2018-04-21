@@ -68,6 +68,8 @@ Add additional notes about how to deploy this on a live system
 
 I welcome any and all contributions to this repository as long as your behavior conforms to the [code of conduct](CODE_OF_CONDUCT.md).
 
+[Here is a (very) rough draft of the backend structure of the project.(Link to Draw.io page)](https://www.draw.io/?lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=project_structure.xml#Uhttps%3A%2F%2Fraw.githubusercontent.com%2Fselkind%2Ftext_analysis%2Fmaster%2Fproject_structure.xml)
+
 Feel free to add an issue or submit a pull request!
 If you're new to open source on Github (like I am) here's how:
 * [to add an issue](https://help.github.com/articles/creating-an-issue/)
