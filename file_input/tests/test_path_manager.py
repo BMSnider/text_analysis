@@ -20,3 +20,8 @@ class TestPathManager(unittest.TestCase):
         ordered_result = sorted(result)
 
         self.assertEqual(ordered_expected, ordered_result)
+
+    def test_get_files_file_input(self):
+        test = PathManager(self.test_file_path)
+        result = test.get_files()
+        self.assertEqual([self.test_file_path], result)
