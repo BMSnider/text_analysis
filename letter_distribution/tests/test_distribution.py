@@ -17,14 +17,11 @@ class TestDistribution(unittest.TestCase):
             self.sum += number[i]
         self.test = Distribution(self.test_data)
 
-    def test_has_distribution(self):
-        self.assertEqual(self.test_data, self.test.distribution)
-
     def test_has_property_count(self):
         self.assertEqual(self.test.count, 0)
 
     def test_has_property_most_common(self):
-        self.assertEqual(self.test.most_common, {})
+        self.assertEqual(self.test.most_common, ())
 
     def test_has_property_least_common(self):
-        self.assertEqual(self.test.least_common, {})
+        self.assertEqual(self.test.least_common, ())

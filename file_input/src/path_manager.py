@@ -14,7 +14,7 @@ class PathManager:
 
     def __init__(self, path):  # directory or file
         self.path = path
-        self.output = []
+        self.file_converters = {".txt": TextToString}
 
     def convert_path(self):
         files = self.get_files()
@@ -43,12 +43,10 @@ class PathManager:
 
     def get_file_converter(self, file_path):
 
-        file_converters = {".txt": TextToString
-                           }
         extension = os.path.splitext(file_path)[1]
 
         try:
-            return file_converters[extension](file_path)
+            return self.file_converters[extension](file_path)
 
         except KeyError:
             print("unsupported file extension: {}".format(extension))
